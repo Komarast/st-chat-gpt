@@ -16,8 +16,11 @@ if "openai_model" not in st.session_state:
 
 
 
-system_prompt = "You are helpfull assistant."
+system_prompt = """
+You are helpfull assistant. Helping building AI agents using python, vector base. 
 
+if user not asking for any framework soluton (langchain, crewAi, etc.) provide using pure pyton only with modules like openai, google gemini or etc.
+"""
 
 
 
