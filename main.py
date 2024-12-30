@@ -1,10 +1,9 @@
-from dotenv import load_dotenv
-import os
+
 from openai import OpenAI
 import streamlit as st
-load_dotenv()
 
-api_key = os.getenv('OPENAI_API_KEY')
+
+
 
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
@@ -17,6 +16,8 @@ if "openai_model" not in st.session_state:
 
 
 system_prompt = """
+
+
 You are helpfull assistant. Helping building AI agents using python, vector base an other python libraries. 
 
 if user not asking for any framework soluton (langchain, crewAi, etc.) provide using pure pyton only with modules like openai, google gemini or etc.
@@ -28,9 +29,10 @@ User can ask you to help with other programming language like JavaScipt, c#, vb 
 """
 
 
-
+#set title for page in borowser and title inside chat UI
 st.set_page_config(page_title="My chat AI")
 st.title("AI Chat")
+
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
